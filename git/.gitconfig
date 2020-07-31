@@ -1,0 +1,26 @@
+[core]
+	excludesfile = /Users/zhaowenlu/.gitignore_global
+	autocrlf = input
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\"
+	path = -ro
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/bcomp \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	trustExitCode = true
+[diff]
+	tool = bc3
+[merge]
+	tool = bc3
+[mergetool "bc3"]
+	trustExitCode = true
+[user]
+	name = wenlu.zhao
+	email = wenlu.zhao@beibei.com
+[commit]
+	template = /Users/zhaowenlu/.stCommitMsg
+[hub]
+	protocol = https
+[pull]
+	ff = only
+[icdiff]
+	options = --highlight --line-numbers
