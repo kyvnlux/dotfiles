@@ -14,8 +14,8 @@
 [mergetool "bc3"]
 	trustExitCode = true
 [user]
-	name = wenlu.zhao
-	email = wenlu.zhao@beibei.com
+	name = zhaowenlu
+	email = zhaowenlu@gmail.com
 [commit]
 	template = /Users/zhaowenlu/.stCommitMsg
 [hub]
