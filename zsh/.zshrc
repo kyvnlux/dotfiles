@@ -9,6 +9,7 @@ export ZSH="/Users/zhaowenlu/.oh-my-zsh"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+#ZSH_THEME="agnoster"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -63,7 +64,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git svn mvn
+  git brew 
 )
 
 if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
@@ -95,10 +96,10 @@ export LANG=en_US.UTF-8
 
 # homebrew
 export HOMEBREW_NO_BOTTLE_SOURCE_FALLBACK=1
-#export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 #export HOMEBREW_VERBOSE=1
 #export HOMEBREW_CURL_VERBOSE=1
-export HOMEBREW_AUTO_UPDATE_SECS=54000
+#export HOMEBREW_AUTO_UPDATE_SECS=54000
 export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.aliyun.com/homebrew/brew.git
 #export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles #default https://homebrew.bintray.com/
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
@@ -118,9 +119,6 @@ alias lsof-tcp-listen="lsof -n -P -iTCP -sTCP:LISTEN"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-#eval "$(lua /Users/zhaowenlu/Sources/Github/z.lua/z.lua  --init zsh once enhanced)"
+source <("/usr/local/bin/starship" init zsh --print-full-init)
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
-
+eval "$(nodenv init -)"
